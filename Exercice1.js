@@ -1,26 +1,26 @@
 //Fonction adder modifié pour nombre de parametres variables
-function adder(){
-var args = Array.prototype.slice.call(arguments);
+function adder() {
+    var args = Array.prototype.slice.call(arguments);
 
-  return function(v){
-	var somme=0;
-	args.forEach(function(val){
-	somme+=val(v);
-	});
-  return somme;
-  }
+    return function (v) {
+        var somme = 0;
+        args.forEach(function (val) {
+            somme += val(v);
+        });
+        return somme;
+    }
 }
 
-function mult(v){
-  return function(e){
-    return v*e;
-  }
+function mult(v) {
+    return function (e) {
+        return v * e;
+    }
 }
 //Methode de soustraction
-function sub(x){
-  return function(y){
-    return x - y;
-  }
+function sub(x) {
+    return function (y) {
+        return x - y;
+    }
 }
 
 console.log(adder()(0)); // 0
